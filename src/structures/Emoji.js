@@ -123,6 +123,19 @@ class Emoji {
   }
 
   /**
+   * Deletes the emoji
+   * @returns {Promise<Emoji>}
+   * @example
+   * // delete a emoji
+   * emoji.delete()
+   *  .then(e => console.log(`Deleted emoji ${e}`))
+   *  .catch(console.error);
+   */
+  delete() {
+    return this.client.rest.methods.deleteEmoji(this);
+  }
+
+  /**
    * When concatenated with a string, this automatically returns the emoji mention rather than the object.
    * @returns {string}
    * @example
